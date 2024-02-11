@@ -14,4 +14,4 @@ jobs:
         server: lunacadca.online
         username: admin.lunacadca.online
         password: ${{ secrets.FTP_PASS }}
-        server-dir: web/
+        server-dir: /
