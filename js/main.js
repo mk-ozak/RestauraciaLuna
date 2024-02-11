@@ -10,6 +10,46 @@
  
  ------------------------------------------------------- */
 
+
+
+ getData();
+ async function getData(){
+     const allMenu = await fetch ('https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna');
+     console.log(allMenu);
+     const menicko = await allMenu.json();
+     
+     document.getElementById("pondelok_p1").innerHTML = menicko.data[2].j1;
+     document.getElementById("pondelok_p2").innerHTML = menicko.data[2].j2;
+     document.getElementById("pondelok_m1").innerHTML = menicko.data[2].m1;
+     document.getElementById("pondelok_m2").innerHTML = menicko.data[2].m2;
+     
+ }
+ 
+   //  fetch('')
+     //.then(res => console.log(res))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+    /* ===================================
+     začiatok JS 
+     ====================================== */ 
+
+
+
 (function ($) {
 
     "use strict";
@@ -3531,24 +3571,7 @@
         event.preventDefault();
     });
 
-})(jQuery)
-;
-getData();
-
-async function getData(){
-    const allMenu = await fetch ('https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna');
-    console.log(allMenu);
-    const menicko = await allMenu.json();
-    
-    document.getElementById("pondelok_p1").innerHTML = menicko.data[2].j1;
-    document.getElementById("pondelok_p2").innerHTML = menicko.data[2].j2;
-    document.getElementById("pondelok_m1").innerHTML = menicko.data[2].m1;
-    document.getElementById("pondelok_m2").innerHTML = menicko.data[2].m2;
-    
-}
-
-  //  fetch('')
-    //.then(res => console.log(res))
+})(jQuery);
 
 
 /* ===================================
