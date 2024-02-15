@@ -10,27 +10,45 @@
  
  ------------------------------------------------------- */
 
-
-
- getData();
- async function getData(){
-     const allMenu = await fetch ('https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna');
-     console.log(allMenu);
-     const menicko = await allMenu.json();
-     
-     document.getElementById("pondelok_p1").innerHTML = menicko.data[2].j1;
-     document.getElementById("pondelok_p2").innerHTML = menicko.data[2].j2;
-     document.getElementById("pondelok_m1").innerHTML = menicko.data[2].m1;
-     document.getElementById("pondelok_m2").innerHTML = menicko.data[2].m2;
-     
- }
  
-   //  fetch('')
-     //.then(res => console.log(res))
+/*
+ var myHeaders = new Headers();
+ myHeaders.append("Content-Type", "application/json");
+ var requestOptions = {
+     method: "get",
+     headers: myHeaders,
+     redirect: "follow",
+     };
+ */
+          
+     async function getData() {
+       const response = await fetch ('https://api.quotable.io/random');
+       const data = await response.json();
+       if (response.ok) {
+        console.log(data);
+        document.getElementById("pondelok_p1").innerHTML = data.content;
+      } else {
+        quote.textContent = "An error occured";
+        console.log(data);
+      }
+    }
+    getData();
+    ;
 
+         //https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna
+ //fetch('https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna', requestOptions)
+   //  .then(response => response.json())
+   //  .then(result => console.log(result))
+   //  .catch(error => console.log('error', error));
+   
 
-
-
+ //console.log("aa")
+ 
+     
+     
+   //  document.getElementById("pondelok_p2").innerHTML = menicko.data[2].j2;
+     //document.getElementById("pondelok_m1").innerHTML = menicko.data[2].m1;
+     //document.getElementById("pondelok_m2").innerHTML = menicko.data[2].m2;
 
 
 
