@@ -1,6 +1,6 @@
 
 //načítanie menu
-const apiKey = 'AIzaSyCF8zAqLBxI7dN01jkwA5jSTSFsBLsqjsw';
+const apiKey = '';
 const spreadsheetId = '1dgnH_IIQG_qG50bNb7XZ0_2Fzsl5aO8QdZEF7NxkRuY';
 const range = 'menuLuna!A1:D42'; // Adjust the range as needed
 

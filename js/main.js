@@ -43,14 +43,6 @@
 
 
 
-
-
-
-
-
-
-
-
          //https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna
  //fetch('https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna', requestOptions)
    //  .then(response => response.json())
@@ -65,15 +57,6 @@
    //  document.getElementById("pondelok_p2").innerHTML = menicko.data[2].j2;
      //document.getElementById("pondelok_m1").innerHTML = menicko.data[2].m1;
      //document.getElementById("pondelok_m2").innerHTML = menicko.data[2].m2;
-
-
-
-
-
-
-
-
-
 
 
      
