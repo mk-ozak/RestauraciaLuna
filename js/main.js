@@ -20,20 +20,36 @@
      redirect: "follow",
      };
  */
-          
-     async function getData() {
+   
+     
+
+
+
+ //staré API
+    /* async function getData() {
        const response = await fetch ('https://api.quotable.io/random');
        const data = await response.json();
        if (response.ok) {
-        console.log(data);
+        console.log(data.content);
         document.getElementById("pondelok_p1").innerHTML = data.content;
       } else {
         quote.textContent = "An error occured";
-        console.log(data);
+      //console.log(data.content);
       }
     }
     getData();
     ;
+*/
+
+
+
+
+
+
+
+
+
+
 
          //https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna
  //fetch('https://v1.nocodeapi.com/mivio/google_sheets/WxhtnplzGnAAmgcM?tabId=menuLuna', requestOptions)
