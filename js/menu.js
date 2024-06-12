@@ -1,10 +1,10 @@
 
 //načítanie menu
-const apiKey = '';
+const kluc = '';
 const spreadsheetId = '1dgnH_IIQG_qG50bNb7XZ0_2Fzsl5aO8QdZEF7NxkRuY';
 const range = 'menuLuna!A1:D42'; // Adjust the range as needed
 
-fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`)
+fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${kluc}`)
     .then(response => response.json())
     .then(data => {
         const rows = data.values;
