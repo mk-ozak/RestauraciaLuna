@@ -7,28 +7,21 @@ const range = 'menuLuna!A1:D42'; // Adjust the range as needed
 fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${kluc}`)
     .then(response => response.json())
     .then(data => {
-        const rows = data.values;
-        if (rows.length) {
-            let html = '<table border="0">';
-            rows.forEach(row => {
-                        html += '<tr>';
-                        row.forEach(cell => {
-                            html += `<td>${cell}</td>`;
-                        });
-                        html += '</tr>';
-            });
-                        html += '</table>';
-            document.getElementById('dataMenu').innerHTML = html;
-        
-            let mojeMenu = data.values;
-            console.log("Menu2")
-            console.log(mojeMenu)
-            console.log(rows)
-        } else {
-            document.getElementById('dataMenu').innerHTML = 'No data found.';
-        }
-            })
+        const m = data.values;
+        document.getElementById('den1').innerHTML = m[1][0];
+        document.getElementById('den2').innerHTML = m[8][0];
+        document.getElementById('den3').innerHTML = m[15][0];
+        document.getElementById('den4').innerHTML = m[22][0];
+        document.getElementById('den5').innerHTML = m[29][0];
+
+        document.getElementById('po-p1').innerHTML = m[2][0];
+        document.getElementById('po-p1x').innerHTML = m[2][2] + " Al: " + m[2][1];
+        document.getElementById('po-p2').innerHTML = m[3][0];
+        document.getElementById('po-p2x').innerHTML = m[3][2] + " Al: " + m[3][1];
+        document.getElementById('po-m1').innerHTML = m[4][0];
+        document.getElementById('po-m2').innerHTML = m[5][0];
+        console.log("Menu:", m)    
+    })
 .catch(error => console.error('Error fetching data:', error));
 
-
-
+//160/200 g. Al: 1,3
