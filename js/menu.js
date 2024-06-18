@@ -55,14 +55,42 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
         document.getElementById('den3').innerHTML = m[15][0];
         document.getElementById('den4').innerHTML = m[22][0];
         document.getElementById('den5').innerHTML = m[29][0];
+        //polievky
+        document.getElementById('po01').innerHTML = m[2][0];
+        document.getElementById('po02').innerHTML = m[2][2] + ", Al: " + m[2][1];
+        document.getElementById('po03').innerHTML = m[3][0];
+        document.getElementById('po04').innerHTML = m[3][2] + ", Al: " + m[3][1];
+        //menu1
+        document.getElementById('po05').innerHTML = m[4][0];
+        document.getElementById('po06').innerHTML = m[4][3];
+        document.getElementById('po07').innerHTML = m[4][2] + ", Al: " + m[4][1];
+        //menu2
+        document.getElementById('po08').innerHTML = m[5][0];
+        document.getElementById('po09').innerHTML = m[5][3];
+        document.getElementById('po10').innerHTML = m[5][2] + ", Al: " + m[5][1];
+        
+        
+        //Trvalé menu
+        document.getElementById('po101').innerHTML = m[36][0];
+        document.getElementById('po102').innerHTML = m[36][3];
+        document.getElementById('po103').innerHTML = m[36][2] + ", Al: " + m[36][1];
+        document.getElementById('po104').innerHTML = m[37][0];
+        document.getElementById('po105').innerHTML = m[37][3];
+        document.getElementById('po106').innerHTML = m[37][2] + ", Al: " + m[37][1];
+        document.getElementById('po107').innerHTML = m[38][0];
+        document.getElementById('po108').innerHTML = m[38][3];
+        document.getElementById('po109').innerHTML = m[38][2] + ", Al: " + m[38][1];
+        document.getElementById('po110').innerHTML = m[39][0];
+        document.getElementById('po111').innerHTML = m[39][3];
+        document.getElementById('po112').innerHTML = m[39][2] + ", Al: " + m[39][1];
+        document.getElementById('po113').innerHTML = m[40][0];
+        document.getElementById('po114').innerHTML = m[40][3];
+        document.getElementById('po115').innerHTML = m[40][2] + ", Al: " + m[40][1];
+        document.getElementById('po116').innerHTML = m[41][0];
+        document.getElementById('po117').innerHTML = m[41][3];
+        document.getElementById('po118').innerHTML = m[41][2] + ", Al: " + m[41][1];
 
-        document.getElementById('po-p1').innerHTML = m[2][0];
-        document.getElementById('po-p1x').innerHTML = m[2][2] + " Al: " + m[2][1];
-        document.getElementById('po-p2').innerHTML = m[3][0];
-        document.getElementById('po-p2x').innerHTML = m[3][2] + " Al: " + m[3][1];
-        document.getElementById('po-m1').innerHTML = m[4][0];
-        document.getElementById('po-m2').innerHTML = m[5][0];
-        //console.log("Menu:", m)    
+        console.log("Menu:", m)    
     })
 .catch(error => console.error('Error fetching data:', error));
 
