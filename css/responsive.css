@@ -21214,6 +21214,8 @@
     border-radius: 6px;
   }
   .tab-style-02 .nav-tabs > li.nav-item {
+    margin: 5px;
+    padding: 5px;
     margin-bottom: 30px;
   }
   .tab-style-01 .nav-tabs > li.nav-item {
@@ -21440,7 +21442,7 @@
     padding: 0;
     display: block;
     margin-bottom: 5px;
-    width: 100%;
+    width: auto;
   }
   .sticky-image-distortion-wrapper .menu {
     padding: 130px 30px 30px 30px;

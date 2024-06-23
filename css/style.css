@@ -88,6 +88,9 @@ Table of contents
 /* ===================================
     03. Reset
 ====================================== */
+/* Ensure the parent container uses flexbox to arrange children horizontally */
+
+
 .cenovka {
   min-width: 70px;
   text-align: right;
