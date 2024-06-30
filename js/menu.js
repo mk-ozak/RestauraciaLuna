@@ -233,6 +233,6 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
         document.getElementById('po197').innerHTML = m[41][3];
         document.getElementById('po198').innerHTML = m[41][2] + ", Al: " + m[41][1];
 
-        //console.log("Menu:", m)    
+        console.log("Menu:", m)    
     })
 .catch(error => console.error('Error fetching data:', error));
