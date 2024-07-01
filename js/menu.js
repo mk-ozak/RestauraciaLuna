@@ -8,8 +8,8 @@ const range = 'menuLuna!A1:D42'; // Adjust the range as needed
 //=============== zobrazenie dňa
  const currentDate = new Date();
  const den = currentDate.getDay();
- const hod = currentDate.getHours();
- console.log(hod);
+ //const hod = currentDate.getHours();
+ //console.log(hod);
  
  if (den === 2) {
      // odznačenie aktívnosti
