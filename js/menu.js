@@ -104,7 +104,6 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
 
         //štvrtok
         //polievky
-        /*
         document.getElementById('sv01').innerHTML = m[23][0];
         document.getElementById('sv02').innerHTML = m[23][2] + ", Al: " + m[23][1];
         document.getElementById('sv03').innerHTML = m[24][0];
@@ -117,7 +116,7 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
         document.getElementById('sv08').innerHTML = m[26][0];
         document.getElementById('sv09').innerHTML = m[26][3];
         document.getElementById('sv10').innerHTML = m[26][2] + ", Al: " + m[26][1];
-        */
+        
 
         //piatok
         //polievky
@@ -196,7 +195,7 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
         document.getElementById('po158').innerHTML = m[41][2] + ", Al: " + m[41][1];
 
         //Trvalé menu 4
-        /*document.getElementById('po161').innerHTML = m[36][0];
+        document.getElementById('po161').innerHTML = m[36][0];
         document.getElementById('po162').innerHTML = m[36][3];
         document.getElementById('po163').innerHTML = m[36][2] + ", Al: " + m[36][1];
         document.getElementById('po164').innerHTML = m[37][0];
@@ -213,7 +212,7 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
         document.getElementById('po175').innerHTML = m[40][2] + ", Al: " + m[40][1];
         document.getElementById('po176').innerHTML = m[41][0];
         document.getElementById('po177').innerHTML = m[41][3];
-        document.getElementById('po178').innerHTML = m[41][2] + ", Al: " + m[41][1];*/
+        document.getElementById('po178').innerHTML = m[41][2] + ", Al: " + m[41][1];
 
         //Trvalé menu 5
         document.getElementById('po181').innerHTML = m[36][0];
@@ -235,6 +234,6 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
         document.getElementById('po197').innerHTML = m[41][3];
         document.getElementById('po198').innerHTML = m[41][2] + ", Al: " + m[41][1];
 
-        console.log("Menu:", m)    
+        //console.log("Menu:", m)    
     })
 .catch(error => console.error('Error fetching data:', error));
