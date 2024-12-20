@@ -90,6 +90,13 @@ Table of contents
 ====================================== */
 /* Ensure the parent container uses flexbox to arrange children horizontally */
 
+.nezobraz_ma {
+  display: none;
+}
+
+.vacsie_riadky {
+  line-height: 1.25;
+}
 
 .cenovka {
   min-width: 70px;
@@ -105,6 +112,7 @@ Table of contents
 html {
   font-size: 16px;
 }
+
 body {
   font-family: var(--primary-font);
   font-size: 16px;
@@ -864,7 +872,9 @@ b, strong {
 }
 /* ===================================
     05. General
-====================================== */
+====================================== */ 
+
+
 /* Separator line */
 .separator-line-1px {
   height: 1px;
