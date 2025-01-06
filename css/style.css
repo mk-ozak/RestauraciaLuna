@@ -91,9 +91,23 @@ Table of contents
 /* Ensure the parent container uses flexbox to arrange children horizontally */
 
 .nezobraz_ma {
+  /* display: none; */
+}
+.nezobraz_pondelok {
   display: none;
 }
-
+.nezobraz_utorok {
+  /* display: none; */
+}
+.nezobraz_streda {
+  /* display: none; */
+}
+.nezobraz_stvrtok {
+  /* display: none; */
+}
+.nezobraz_piatok {
+  /* display: none; */
+}
 .vacsie_riadky {
   line-height: 1.25;
 }
