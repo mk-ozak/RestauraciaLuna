@@ -103,10 +103,10 @@ Table of contents
   /* display: none; */
 }
 .nezobraz_stvrtok {
-  /* display: none; */
+  display: none;
 }
 .nezobraz_piatok {
-   /* display: none;  */
+   display: none; 
 }
 .vacsie_riadky {
   line-height: 1.25;
