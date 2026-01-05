@@ -133,8 +133,6 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${r
 		//Trvalá ponuka - naplnenie všetkých dní naraz pomocou tried
 		for (let i = 1; i <= 6; i++) {
 			const rowIndex = 35 + i; // riadky 36-41 v spreadsheetu
-            console.log(rowIndex);
-            
 			const nazovElements = document.querySelectorAll(".trvala-nazov-" + i);
 			const cenaElements = document.querySelectorAll(".trvala-cena-" + i);
 			const popisElements = document.querySelectorAll(".trvala-popis-" + i);
