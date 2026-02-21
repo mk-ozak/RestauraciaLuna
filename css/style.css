@@ -91,7 +91,7 @@ Table of contents
 /* Ensure the parent container uses flexbox to arrange children horizontally */
 
 .nezobraz_ma {
-  /* display: none; */
+  display: none;
 }
 .nezobraz_pondelok {
   /* display: none; */
