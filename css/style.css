@@ -108,6 +108,12 @@ Table of contents
 .nezobraz_piatok {
    /* display: none;  */
 }
+/* text zobrazený v deň, keď je zatvorené (sviatok a pod.) – riadi sa cez Supabase status/note */
+.den-zatvorene {
+  padding: 70px 15px;
+  font-size: 2.4rem;
+  line-height: 1.4;
+}
 .vacsie_riadky {
   line-height: 1.25;
 }
