@@ -52,9 +52,52 @@ const headers = { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_A
 const monday = mondayOfThisWeek();
 const friday = new Date(monday); friday.setDate(friday.getDate() + 4);
 
+// riadenie stavu sekcie: loader → menu / technická porucha
+function zobrazMenu() {
+  const status = document.getElementById("menu-status");
+  if (status) status.style.display = "none";
+  const tabs = document.getElementById("menu-tabs");
+  if (tabs) tabs.style.display = "";
+}
+function zobrazChybu() {
+  const tabs = document.getElementById("menu-tabs");
+  if (tabs) tabs.style.display = "none";
+  const status = document.getElementById("menu-status");
+  if (status) status.style.display = "";
+  const box = status?.querySelector(".menu-status");
+  if (box) box.classList.add("menu-status-error");
+  const spinner = document.getElementById("menu-status-spinner");
+  if (spinner) spinner.style.display = "none";
+  set("menu-status-text",
+    "Denné menu sa nám teraz nepodarilo načítať. " +
+    "Ide o dočasnú technickú poruchu pri načítaní. Skúste, prosím, obnoviť stránku.");
+  const actions = document.getElementById("menu-status-actions");
+  if (actions) actions.style.display = "";
+}
+
+// fetch s timeoutom a opakovaním (mobilné siete / krátke výpadky Supabase)
+async function fetchJSON(url, pokusy = 3) {
+  for (let pokus = 1; ; pokus++) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 8000);
+    try {
+      const r = await fetch(url, { headers, signal: ctrl.signal, cache: "no-store" });
+      clearTimeout(t);
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      const data = await r.json();
+      if (!Array.isArray(data)) throw new Error("neočakávaná odpoveď");
+      return data;
+    } catch (err) {
+      clearTimeout(t);
+      if (pokus >= pokusy) throw err;
+      await new Promise((res) => setTimeout(res, 700 * pokus)); // postupné zdržanie
+    }
+  }
+}
+
 Promise.all([
-  fetch(`${SUPABASE_URL}/rest/v1/daily_menus?menu_date=gte.${toISO(monday)}&menu_date=lte.${toISO(friday)}&order=menu_date.asc`, { headers }).then((r) => r.json()),
-  fetch(`${SUPABASE_URL}/rest/v1/permanent_menu?order=position.asc`, { headers }).then((r) => r.json()),
+  fetchJSON(`${SUPABASE_URL}/rest/v1/daily_menus?menu_date=gte.${toISO(monday)}&menu_date=lte.${toISO(friday)}&order=menu_date.asc`),
+  fetchJSON(`${SUPABASE_URL}/rest/v1/permanent_menu?order=position.asc`),
 ])
   .then(([dni, trvale]) => {
     const prefix = ["po", "ut", "st", "sv", "pi"]; // pozor: štvrtok = "sv"
@@ -86,5 +129,9 @@ Promise.all([
       document.querySelectorAll(".trvala-cena-" + i).forEach((el) => (el.innerHTML = fmtCena(it?.price)));
       document.querySelectorAll(".trvala-popis-" + i).forEach((el) => (el.innerHTML = it ? (it.portion || "") + ", Al: " + (it.allergens || "") : ""));
     }
+    zobrazMenu();
   })
-  .catch((err) => console.error("Chyba pri načítaní menu:", err));
+  .catch((err) => {
+    console.error("Chyba pri načítaní menu:", err);
+    zobrazChybu();
+  });
